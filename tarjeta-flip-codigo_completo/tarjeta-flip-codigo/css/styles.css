@@ -13,19 +13,7 @@
 }
 
 /* ---------- 2. Página (fondo blanco hueso) ---------- */
-body {
-    background-color: #cdccc9;
-    background-image:
-        radial-gradient(circle at 15% 10%, #fbf8f1 0, transparent 55%),
-        radial-gradient(circle at 85% 95%, #e8dfcd 0, transparent 50%);
-    background-attachment: fixed;
-    min-height: 100vh;
-    font-family: "Segoe UI", Arial, sans-serif;
-    color: #2b2926;
-    line-height: 1.5;
-    padding: 30px 15px;
-    overflow-x: hidden;
-}
+
 
 .cabecera-pagina {
     text-align: center;
