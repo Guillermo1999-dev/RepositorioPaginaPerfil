@@ -1,0 +1,36 @@
+TARJETA DE VISITA EN CODIGO (SOLO HTML Y CSS)
+=============================================
+Estructura del proyecto:
+
+tarjeta-flip-codigo/
+ |-- index.html        (tarjeta de visita 3D + vista previa de LinkedIn)
+ |-- galeria.html      (galeria 3D del portfolio, enlaza a ArtStation)
+ |-- LEEME.txt
+ |-- css/
+ |    |-- styles.css   (estilos de la tarjeta, comentados por secciones)
+ |    |-- galeria.css  (estilos de la galeria 3D)
+ |-- img/
+      |-- obra01.svg ... obra12.svg   (imagenes de ejemplo de la galeria)
+
+COMO USARLO
+- Abre index.html con el navegador (o con Live Server en Visual Studio Code).
+- Al cargar, la tarjeta aparece tumbada y se levanta sola.
+- Pasa el raton por encima de la tarjeta para darle la vuelta (en el movil, tocala).
+- En la cara trasera:
+    * "LinkedIn" abre una vista previa del perfil (ventana modal) con un boton
+      que lleva al perfil real. LinkedIn no permite incrustar su pagina en un
+      iframe, por eso la vista previa esta maquetada en el propio HTML/CSS.
+    * "Portfolio 3D" (linea resaltada) lleva a galeria.html; desde alli, el
+      enlace de abajo lleva a ArtStation.
+
+COMO PONER TUS IMAGENES EN LA GALERIA
+- Las 12 imagenes de img/ son de ejemplo (obra01.svg ... obra12.svg).
+- Copia tus imagenes (JPG o PNG) a la carpeta img/ y cambia los nombres en
+  galeria.html, dentro de style="background-image: url(img/...)".
+- Funcionan mejor las imagenes verticales (por ejemplo 600 x 900 px).
+
+No lleva JavaScript: el giro, la animacion y la ventana de LinkedIn se hacen solo
+con :hover, :focus-within, :target, transform, transition y @keyframes.
+
+Idea original de la tarjeta: "Flipping Business Card" de Joshua Ward (CodePen).
+Esta version esta reescrita desde cero en HTML y CSS normales.
