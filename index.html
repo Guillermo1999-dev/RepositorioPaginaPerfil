@@ -4,15 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Tarjeta de visita en 3D maquetada como código, hecha solo con HTML y CSS">
-    <title>Tarjeta de visita en código - Guillermo Carrasco</title>
+    <title>Guillermo Carrasco · Diseñador 3D / Dev</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
+    <!-- ================= INTRO TIPO TERMINAL (solo HTML y CSS) =================
+         Las líneas se "escriben" solas con @keyframes + steps() y, al terminar, la capa se desvanece.
+         El casillero oculto + la etiqueta «saltar intro» permiten saltarla sin JavaScript (:checked). -->
+    <input type="checkbox" id="saltar" class="saltar" aria-label="Saltar la introducción">
+
+    <section class="intro" aria-hidden="true">
+        <div class="terminal">
+
+            <div class="terminal-barra">
+                <span class="punto punto-rojo"></span>
+                <span class="punto punto-amarillo"></span>
+                <span class="punto punto-verde"></span>
+                <span class="terminal-titulo">guillermo@portfolio: ~</span>
+            </div>
+
+            <div class="terminal-cuerpo">
+
+                <p class="linea" style="--d: 0.3s"><span class="usuario">guillermo@portfolio</span><span class="sim">:</span><span class="ruta">~</span><span class="sim">$</span> <span class="cmd" style="--n: 6; --t: 0.4s">whoami</span></p>
+                <p class="salida blanco" style="--d: 1.05s">Guillermo Carrasco</p>
+
+                <p class="linea" style="--d: 1.4s"><span class="usuario">guillermo@portfolio</span><span class="sim">:</span><span class="ruta">~</span><span class="sim">$</span> <span class="cmd" style="--n: 11; --t: 0.6s">cat rol.txt</span></p>
+                <p class="salida amarillo" style="--d: 2.35s">Diseñador3D/Dev</p>
+
+                <p class="linea" style="--d: 2.7s"><span class="usuario">guillermo@portfolio</span><span class="sim">:</span><span class="ruta">~</span><span class="sim">$</span> <span class="cmd" style="--n: 18; --t: 0.9s">./abrir_tarjeta.sh</span></p>
+                <p class="salida" style="--d: 3.95s">Compilando<span class="carga"><i></i></span><span class="ok" style="--d: 4.75s">[OK]</span></p>
+
+                <p class="linea" style="--d: 4.95s"><span class="usuario">guillermo@portfolio</span><span class="sim">:</span><span class="ruta">~</span><span class="sim">$</span> <span class="cursor"></span></p>
+
+            </div>
+
+            <label class="saltar-etiqueta" for="saltar">// saltar intro →</label>
+        </div>
+    </section>
+
     <!-- CAMBIA los datos de la tarjeta por los tuyos -->
 
+    <!-- ================= PANEL SUPERIOR (barra de escritorio Linux) ================= -->
+    <nav class="panel" aria-label="Navegación principal">
+        <div class="espacios">
+            <a class="activo" href="index.html">1:tarjeta</a>
+            <a href="galeria.html">2:galería3d</a>
+            <a href="#linkedin">3:linkedin</a>
+        </div>
+        <div class="panel-info"><span>bash</span><span>utf-8</span><span class="led">●</span></div>
+    </nav>
+
     <header class="cabecera-pagina">
-        <h1>Tarjeta de visita en código</h1>
+        <h1><span class="usuario">guillermo@portfolio</span><span class="sim">:</span><span class="ruta">~</span><span class="sim">$</span> ./tarjeta.sh</h1>
         <p>Pasa el ratón por encima de la tarjeta (o tócala en el móvil) para darle la vuelta.</p>
     </header>
 
@@ -23,35 +67,31 @@
         <section class="escena">
             <article class="tarjeta" tabindex="0">
 
-                <!-- CARA DELANTERA: el código CSS que hace girar la tarjeta -->
+                <!-- CARA DELANTERA: nombre y rol, con el mismo estilo de código (en negrita) -->
                 <div class="cara frente">
-                    <div class="numeros">
+                    <div class="barra-ventana" aria-hidden="true"><span class="punto punto-rojo"></span><span class="punto punto-amarillo"></span><span class="punto punto-verde"></span><span class="barra-titulo">tarjeta.html — vim</span></div>
+                                        <div class="numeros">
                         <span>1</span>
                         <span>2</span>
                         <span>3</span>
-                        <span>4</span>
-                        <span>5</span>
-                        <span>6</span>
-                        <span>7</span>
-                        <span>8</span>
-                        <span>9</span>
-                        <span>10</span>
                     </div>
-<pre class="codigo"><code><span class="com">/* Giro de la tarjeta en CSS puro */</span>
-<span class="sel">.tarjeta:hover .frente</span> <span class="sim">{</span>
-    <span class="prop">transform</span><span class="sim">:</span> <span class="valor">rotateX(-180deg)</span><span class="sim">;</span>
-<span class="sim">}</span>
-
-<span class="sel">.tarjeta:hover .reverso</span> <span class="sim">{</span>
-    <span class="prop">transform</span><span class="sim">:</span> <span class="valor">rotateX(0deg)</span><span class="sim">;</span>
-<span class="sim">}</span>
-
-<span class="com">/* :focus-within lo hace funcionar en el móvil */</span></code></pre>
+<pre class="codigo"><code><span class="com">&lt;!-- Tarjeta de visita --&gt;</span>
+<span class="sim">&lt;</span><span class="tag">h1</span><span class="sim">&gt;</span>Guillermo Carrasco - Diseñador3D/Dev<span class="sim">&lt;/</span><span class="tag">h1</span><span class="sim">&gt;</span><span class="cursor"></span>
+<span class="com">&lt;!-- Pasa el ratón para girarla --&gt;</span></code></pre>
+                    <pre class="ascii-cubo" aria-hidden="true">    .+------+
+  .' |    .'|
+ +---+--+'  |
+ |   |  |   |
+ |  ,+--+---+
+ |.'    | .'
+ +------+'</pre>
+                    <div class="barra-estado" aria-hidden="true"><span class="modo modo-normal">NORMAL</span><span>tarjeta.html</span><span class="der">[utf-8] 2:1</span></div>
                 </div>
 
                 <!-- CARA TRASERA: el código HTML con los datos y los enlaces -->
                 <div class="cara reverso">
-                    <div class="numeros">
+                    <div class="barra-ventana" aria-hidden="true"><span class="punto punto-rojo"></span><span class="punto punto-amarillo"></span><span class="punto punto-verde"></span><span class="barra-titulo">contacto.html — vim</span></div>
+                                        <div class="numeros">
                         <span>1</span>
                         <span>2</span>
                         <span>3</span>
@@ -79,14 +119,60 @@
     <a href="#linkedin"><span class="sim">&lt;</span><span class="tag">a</span> <span class="attr">href</span><span class="sim">=</span><span class="valor">"#linkedin"</span><span class="sim">&gt;</span>LinkedIn<span class="sim">&lt;/</span><span class="tag">a</span><span class="sim">&gt;</span></a>
     <a href="galeria.html" class="destacado"><span class="sim">&lt;</span><span class="tag">a</span> <span class="attr">href</span><span class="sim">=</span><span class="valor">"galeria.html"</span><span class="sim">&gt;</span>Portfolio 3D →<span class="sim">&lt;/</span><span class="tag">a</span><span class="sim">&gt;</span></a>
 <span class="sim">&lt;/</span><span class="tag">article</span><span class="sim">&gt;</span></code></pre>
+                    <div class="barra-estado" aria-hidden="true"><span class="modo modo-insert">INSERT</span><span>contacto.html</span><span class="der">[html] 13:1</span></div>
                 </div>
 
             </article>
         </section>
 
-        <!-- ================= EXPLICACIÓN PARA EL ALUMNADO ================= -->
-        
+        <!-- ================= VENTANAS DE ESCRITORIO: neofetch y tree ================= -->
+        <section class="ventana" aria-label="Sobre mí">
+            <div class="barra-ventana"><span class="punto punto-rojo"></span><span class="punto punto-amarillo"></span><span class="punto punto-verde"></span><span class="barra-titulo">guillermo@portfolio: ~</span></div>
+            <div class="ventana-cuerpo">
+                <p><span class="usuario">guillermo@portfolio</span><span class="sim">:</span><span class="ruta">~</span><span class="sim">$</span> <b>neofetch</b></p>
+                <div class="nf">
+<pre class="logo" aria-hidden="true">       /\
+      /  \
+     /____\
+    /\    /\
+   /  \  /  \
+  /____\/____\
+  \    /\    /
+   \  /  \  /
+    \/____\/</pre>
+                    <div class="datos">
+                        <p><b class="usuario">guillermo</b>@<b class="usuario">portfolio</b></p>
+                        <p class="linea-sep">------------------</p>
+                        <p><b>Rol</b>: Diseñador 3D / Dev</p>
+                        <p><b>Docencia</b>: DAM y DAW · Vigara FP</p>
+                        <p><b>Modelado</b>: Blender</p>
+                        <p><b>Motor</b>: Unity</p>
+                        <p><b>Estilo</b>: 3D estilizado, low-poly</p>
+                        <p><b>Stack web</b>: HTML + CSS (sin JS)</p>
+                        <p class="colores" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ventana" aria-label="Mapa del portfolio">
+            <div class="barra-ventana"><span class="punto punto-rojo"></span><span class="punto punto-amarillo"></span><span class="punto punto-verde"></span><span class="barra-titulo">guillermo@portfolio: ~/portfolio</span></div>
+            <div class="ventana-cuerpo">
+                <p><span class="usuario">guillermo@portfolio</span><span class="sim">:</span><span class="ruta">~</span><span class="sim">$</span> <b>tree portfolio/</b></p>
+<pre class="arbol">portfolio/
+├── tarjeta.html        <span class="com"># estás aquí</span>
+├── <a href="galeria.html">galeria.html</a>        <span class="com"># galería 3D · 6 piezas</span>
+├── <a href="#linkedin">linkedin</a>            <span class="com"># vista previa del perfil</span>
+└── <a href="https://www.artstation.com/guillermocarrasco" target="_blank" rel="noopener noreferrer">artstation</a>          <span class="com"># portfolio completo</span>
+
+<span class="com">1 archivo, 3 enlaces</span></pre>
+            </div>
+        </section>
+
+    </main>
+
     <footer class="pie-pagina">
+        <p class="estado-pie"><span class="modo modo-normal">NORMAL</span> tarjeta.html · GameDev + 3D</p>
         <p>Basado en la idea de «Flipping Business Card» de Joshua Ward (CodePen), reescrito solo con HTML y CSS.</p>
     </footer>
 
@@ -98,9 +184,10 @@
 
         <article class="perfil">
             <a class="cerrar" href="#" aria-label="Cerrar">✕</a>
-
+            
             <div class="perfil-banner"><img src="img/imagen06.webp" alt="Foto de banner LinkedIn"></div>
             <div class="perfil-avatar"><img src="img/foto_linkedin.jpeg" alt="Foto de Guillermo Carrasco"></div>
+
             <div class="perfil-cuerpo">
                 <p class="perfil-red">in · LinkedIn</p>
                 <h2>Guillermo Carrasco Mayor</h2>

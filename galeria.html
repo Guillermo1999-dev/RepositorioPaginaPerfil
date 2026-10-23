@@ -4,26 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Galería 3D del portfolio de Guillermo Carrasco, hecha solo con HTML y CSS">
-    <title>Portfolio 3D - Guillermo Carrasco</title>
+    <title>Galería 3D · Guillermo Carrasco</title>
     <link rel="stylesheet" href="css/galeria.css">
 </head>
 <body>
 
     <!-- ================= CABECERA ================= -->
-    <header class="barra">
-        <a class="volver" href="index.html">← Volver a la tarjeta</a>
+    <nav class="panel" aria-label="Navegación principal">
+        <div class="espacios">
+            <a href="index.html">1:tarjeta</a>
+            <a class="activo" href="galeria.html">2:galería3d</a>
+            <a href="https://www.artstation.com/guillermocarrasco" target="_blank" rel="noopener noreferrer">3:artstation</a>
+        </div>
+        <div class="panel-info"><span>bash</span><span>utf-8</span><span class="led">●</span></div>
+    </nav>
+
+    <header class="cabecera">
+        <p class="prompt"><span class="usuario">guillermo@portfolio</span><span class="sim">:</span><span class="ruta">~/galeria</span><span class="sim">$</span> ./render.sh --modo 3d</p>
+        <pre class="hud" aria-hidden="true">[ ratón ] explorar    [ clic ] ampliar    [ ← volver: 1:tarjeta ]</pre>
     </header>
 
     <!-- ================= GALERÍA ================= -->
     <!-- CAMBIA las imágenes: sustituye los archivos de la carpeta img/ (o los nombres en url(...)) por tus obras -->
     <main class="wrapper">
         <div class="items">
-            <div class="item" tabindex="0" title="Obra 01" style="background-image: url(img/imagen01.webp)"></div>
-            <div class="item" tabindex="0" title="Obra 02" style="background-image: url(img/imagen02.jpg)"></div>
-            <div class="item" tabindex="0" title="Obra 03" style="background-image: url(img/imagen03.jpg)"></div>
-            <div class="item" tabindex="0" title="Obra 04" style="background-image: url(img/imagen04.webp)"></div>
-            <div class="item" tabindex="0" title="Obra 05" style="background-image: url(img/imagen05.webp)"></div>
-            <div class="item" tabindex="0" title="Obra 06" style="background-image: url(img/imagen06.webp)"></div>
+            <div class="item" tabindex="0" title="Obra 01" style="background-image: url(img/imagen01.webp)"><span class="etiqueta">obra_01</span></div>
+            <div class="item" tabindex="0" title="Obra 02" style="background-image: url(img/imagen02.jpg)"><span class="etiqueta">obra_02</span></div>
+            <div class="item" tabindex="0" title="Obra 03" style="background-image: url(img/imagen03.jpg)"><span class="etiqueta">obra_03</span></div>
+            <div class="item" tabindex="0" title="Obra 04" style="background-image: url(img/imagen04.webp)"><span class="etiqueta">obra_04</span></div>
+            <div class="item" tabindex="0" title="Obra 05" style="background-image: url(img/imagen05.webp)"><span class="etiqueta">obra_05</span></div>
+            <div class="item" tabindex="0" title="Obra 06" style="background-image: url(img/imagen06.webp)"><span class="etiqueta">obra_06</span></div>
         </div>
     </main>
 
